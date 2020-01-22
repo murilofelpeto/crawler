@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://docker:docker@172.17.0.2/natal?authSource=admin
