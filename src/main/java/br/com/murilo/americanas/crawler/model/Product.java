@@ -1,7 +1,12 @@
 package br.com.murilo.americanas.crawler.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import br.com.murilo.americanas.crawler.dto.request.ProductRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,8 +16,12 @@ import lombok.ToString;
 @Setter
 @ToString
 @AllArgsConstructor
-public class Product {
+@Document
+public class Product implements Serializable {
 
+	private static final long serialVersionUID = 9126621660694799390L;
+	
+	@Id
 	private String id;
 	private Integer codigo;
 	private String nome;
@@ -22,6 +31,16 @@ public class Product {
 	private String categoria;
 	private String imagem;
 	
+	public Product(ProductRequest request) {
+		this.id = request.getId();
+		this.codigo = request.getCodigo();
+		this.nome = request.getNome();
+		this.descricao = request.getDescricao();
+		this.valor = request.getValor();
+		this.link = request.getLink();
+		this.categoria = request.getCategoria();
+		this.imagem = request.getImagem();
+	}
 
 	public Product(Integer codigo, String nome, String descricao, BigDecimal valor, String link, String categoria, String imagem) {
 		this.codigo = codigo;

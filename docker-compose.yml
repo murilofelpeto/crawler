@@ -2,7 +2,7 @@ version: '3.4'
 services:
    db:
       image: murilofelpeto/natal-database
-      command: mongod --smallfiles --logpath=/dev/null # --quiet
+      command: mongod --logpath=/dev/null # --quiet
       restart: always
       build:
          context: .
@@ -14,8 +14,8 @@ services:
       ports:
          - 27017:27017
       networks:
-         - api-network
-   crawler:
+         - crawler-network
+   application:
       image: murilofelpeto/natal-americanas-crawler
       restart: always
       build:
@@ -36,7 +36,7 @@ services:
       depends_on:
          - db
       networks:
-         - api-network
+         - crawler-network
 networks:
-   api-network:
+   crawler-network:
       driver: bridge
