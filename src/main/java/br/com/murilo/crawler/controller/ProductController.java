@@ -1,4 +1,4 @@
-package br.com.murilo.americanas.crawler.controller;
+package br.com.murilo.crawler.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.murilo.americanas.crawler.dto.request.ProductRequest;
-import br.com.murilo.americanas.crawler.dto.response.ProductResponse;
-import br.com.murilo.americanas.crawler.facade.ProductFacade;
+import br.com.murilo.crawler.dto.request.ProductRequest;
+import br.com.murilo.crawler.dto.response.ProductResponse;
+import br.com.murilo.crawler.facade.ProductFacade;
 
 @RestController("/api/v1/product")
 public class ProductController {

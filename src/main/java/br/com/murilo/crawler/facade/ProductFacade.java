@@ -1,12 +1,12 @@
-package br.com.murilo.americanas.crawler.facade;
+package br.com.murilo.crawler.facade;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.murilo.americanas.crawler.dto.request.ProductRequest;
-import br.com.murilo.americanas.crawler.dto.response.ProductResponse;
-import br.com.murilo.americanas.crawler.model.Product;
-import br.com.murilo.americanas.crawler.service.ProductService;
+import br.com.murilo.crawler.dto.request.ProductRequest;
+import br.com.murilo.crawler.dto.response.ProductResponse;
+import br.com.murilo.crawler.model.Product;
+import br.com.murilo.crawler.service.ProductService;
 
 @Component
 public class ProductFacade {

@@ -1,4 +1,4 @@
-package br.com.murilo.americanas.crawler.exception;
+package br.com.murilo.crawler.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

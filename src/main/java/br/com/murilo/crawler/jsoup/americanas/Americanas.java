@@ -1,4 +1,4 @@
-package br.com.murilo.americanas.crawler.jsoup;
+package br.com.murilo.crawler.jsoup.americanas;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -9,25 +9,28 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import br.com.murilo.americanas.crawler.model.Product;
-import br.com.murilo.americanas.crawler.model.builder.ProductBuilder;
+import br.com.murilo.crawler.jsoup.Crawler;
+import br.com.murilo.crawler.model.Product;
+import br.com.murilo.crawler.model.builder.ProductBuilder;
 
-public class MainCrawler {
+public class Americanas implements Crawler {
 
 	private Set<String> pageLinks;
 	private Set<String> productLinks;
 	private Set<Product> products;
-
-	public MainCrawler() {
+	
+	public Americanas() {
 		this.pageLinks = new HashSet<>();
 		this.products = new HashSet<>();
 		this.productLinks = new HashSet<>();
 	}
 
-	public Set<Product> getProducts(){
+	@Override
+	public Set<Product> getProducts() {
 		return this.products;
 	}
-	
+
+	@Override
 	public void getPageLinks(String url) {
 		if (!pageLinks.contains(url)) {
 			try {
@@ -47,6 +50,7 @@ public class MainCrawler {
 		}
 	}
 
+	@Override
 	public void getToyLink() {
 		this.pageLinks.forEach(p -> {
 			try {
@@ -63,6 +67,7 @@ public class MainCrawler {
 		});
 	}
 
+	@Override
 	public void buildToy() {
 		this.productLinks.forEach(prod -> {
 			try {
@@ -88,13 +93,5 @@ public class MainCrawler {
 				e.printStackTrace();
 			}
 		});
-	}
-
-	public void printProduct() {
-		this.products.forEach(System.out::println);
-	}
-	
-	public void printLinks() {
-		this.pageLinks.forEach(System.out::println);
 	}
 }

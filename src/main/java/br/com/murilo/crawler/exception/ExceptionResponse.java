@@ -1,4 +1,4 @@
-package br.com.murilo.americanas.crawler.exception;
+package br.com.murilo.crawler.exception;
 
 import java.io.Serializable;
 import java.util.Date;

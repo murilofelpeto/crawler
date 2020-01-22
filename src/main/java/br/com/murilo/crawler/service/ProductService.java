@@ -1,12 +1,13 @@
-package br.com.murilo.americanas.crawler.service;
+package br.com.murilo.crawler.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.murilo.americanas.crawler.exception.ResourceNotFoundException;
-import br.com.murilo.americanas.crawler.jsoup.MainCrawler;
-import br.com.murilo.americanas.crawler.model.Product;
-import br.com.murilo.americanas.crawler.repository.ProductRepository;
+import br.com.murilo.crawler.exception.ResourceNotFoundException;
+import br.com.murilo.crawler.jsoup.Crawler;
+import br.com.murilo.crawler.jsoup.americanas.Americanas;
+import br.com.murilo.crawler.model.Product;
+import br.com.murilo.crawler.repository.ProductRepository;
 
 @Service
 public class ProductService {
@@ -18,7 +19,7 @@ public class ProductService {
 	private ProductRepository repository;
 	
 	public void updateCategoryDatabase(String categoria) {
-		MainCrawler crawler = new MainCrawler();
+		Crawler crawler = new Americanas();
 		crawler.getPageLinks(url.concat(categoria));
 		crawler.getToyLink();
 		crawler.buildToy();

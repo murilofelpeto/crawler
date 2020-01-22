@@ -1,4 +1,4 @@
-package br.com.murilo.americanas.crawler.exception.handler;
+package br.com.murilo.crawler.exception.handler;
 
 import java.util.Date;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import br.com.murilo.americanas.crawler.exception.ExceptionResponse;
-import br.com.murilo.americanas.crawler.exception.ResourceNotFoundException;
+import br.com.murilo.crawler.exception.ExceptionResponse;
+import br.com.murilo.crawler.exception.ResourceNotFoundException;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 

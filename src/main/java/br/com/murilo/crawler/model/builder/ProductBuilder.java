@@ -1,11 +1,11 @@
-package br.com.murilo.americanas.crawler.model.builder;
+package br.com.murilo.crawler.model.builder;
 
 import java.math.BigDecimal;
 
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Element;
 
-import br.com.murilo.americanas.crawler.model.Product;
+import br.com.murilo.crawler.model.Product;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

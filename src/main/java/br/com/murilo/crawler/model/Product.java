@@ -1,4 +1,4 @@
-package br.com.murilo.americanas.crawler.model;
+package br.com.murilo.crawler.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import br.com.murilo.americanas.crawler.dto.request.ProductRequest;
+import br.com.murilo.crawler.dto.request.ProductRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

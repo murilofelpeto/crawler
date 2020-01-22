@@ -1,17 +1,16 @@
-package br.com.murilo.americanas.crawler.dto.request;
+package br.com.murilo.crawler.dto.response;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import br.com.murilo.crawler.model.Product;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
-public class ProductRequest implements Serializable {
+public class ProductResponse implements Serializable {
 
-	private static final long serialVersionUID = -3115372111443730582L;
-
+	private static final long serialVersionUID = 7425812975344209008L;
+	
 	private String id;
 	private Integer codigo;
 	private String nome;
@@ -20,6 +19,17 @@ public class ProductRequest implements Serializable {
 	private String link;
 	private String categoria;
 	private String imagem;
+	
+	public ProductResponse(Product product) {
+		this.id = product.getId();
+		this.codigo = product.getCodigo();
+		this.nome = product.getNome();
+		this.descricao = product.getDescricao();
+		this.valor = product.getValor();
+		this.link = product.getLink();
+		this.categoria = product.getCategoria();
+		this.imagem = product.getImagem();
+	}
 
 	@Override
 	public int hashCode() {
@@ -37,12 +47,12 @@ public class ProductRequest implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ProductRequest other = (ProductRequest) obj;
+		ProductResponse other = (ProductResponse) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;
 		} else if (!codigo.equals(other.codigo))
 			return false;
 		return true;
-	}
+	}	
 }
