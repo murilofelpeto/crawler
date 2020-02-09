@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Element;
 
 import br.com.murilo.crawler.model.Product;
+import br.com.murilo.crawler.types.Category;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
@@ -16,7 +17,7 @@ public class ProductBuilder {
 	private String descricao;
 	private BigDecimal valor;
 	private String link;
-	private String categoria;
+	private Category categoria;
 	private String imagem;
 
 	public ProductBuilder qualCodigo(Element codigo) {
@@ -59,7 +60,7 @@ public class ProductBuilder {
 	
 	public ProductBuilder qualCategoria(Element categoria) {
 		if(categoria != null) {
-			this.categoria = categoria.text();
+			this.categoria = Category.getBycategoryname().get(categoria.text());
 		}
 		return this;
 	}

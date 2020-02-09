@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import br.com.murilo.crawler.dto.request.ProductRequest;
+import br.com.murilo.crawler.types.Category;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,7 +29,7 @@ public class Product implements Serializable {
 	private String descricao;
 	private BigDecimal valor;
 	private String link;
-	private String categoria;
+	private Category categoria;
 	private String imagem;
 	
 	public Product(ProductRequest request) {
@@ -42,7 +43,7 @@ public class Product implements Serializable {
 		this.imagem = request.getImagem();
 	}
 
-	public Product(Integer codigo, String nome, String descricao, BigDecimal valor, String link, String categoria, String imagem) {
+	public Product(Integer codigo, String nome, String descricao, BigDecimal valor, String link, Category categoria, String imagem) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.descricao = descricao;

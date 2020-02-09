@@ -3,6 +3,7 @@ package br.com.murilo.crawler.dto.request;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import br.com.murilo.crawler.types.Category;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +19,7 @@ public class ProductRequest implements Serializable {
 	private String descricao;
 	private BigDecimal valor;
 	private String link;
-	private String categoria;
+	private Category categoria;
 	private String imagem;
 
 	@Override

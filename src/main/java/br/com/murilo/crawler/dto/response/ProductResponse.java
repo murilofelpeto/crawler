@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 import br.com.murilo.crawler.model.Product;
+import br.com.murilo.crawler.types.Category;
 import lombok.Getter;
 
 @Getter
@@ -17,7 +18,7 @@ public class ProductResponse implements Serializable {
 	private String descricao;
 	private BigDecimal valor;
 	private String link;
-	private String categoria;
+	private Category categoria;
 	private String imagem;
 	
 	public ProductResponse(Product product) {
